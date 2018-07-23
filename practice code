@@ -1,0 +1,52 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jun  1 09:47:06 2018
+
+@author: aleksandradooley
+"""
+
+# creating a function to select even numbers
+def is_even(x):
+  if x % 2 == 0:
+    return True
+  else:
+    return False
+
+#create a function that returns True only if the x is an integer
+def digit_sum(x):
+    total = 0
+    while x > 0:
+        total += x % 10
+        x = x // 10
+        print x
+    return total
+
+
+
+print digit_sum(1234234)
+#yeah don't like this one so I need to go back over this a few times
+#to remember how to do this things
+
+
+def factorial(x):
+    total = 1
+    while x > 0:
+        total *= x
+        x -= 1
+    return total
+    
+
+print factorial(3)
+
+
+def is_prime(x):
+    if x < 2:
+        return False
+    else:
+        for n in range(2, x-1):
+            if x % n == 0:
+                return False
+        return True
+    
+print is_prime(29)

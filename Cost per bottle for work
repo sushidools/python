@@ -1,0 +1,21 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Jun 26 15:42:04 2018
+
+@author: aleksandradooley
+"""
+
+
+cost = float(raw_input("What is the price of the bottle?: "))
+size = float(raw_input("How many ounces in the bottle?: "))
+ounce = round((cost / size), 2)
+
+print "The price per ounce will be: " + str(ounce)
+
+pour = str(raw_input("Is this a single or a double pour?: "))
+print "The cost for the drink will be: "
+if pour == str('single'):
+    print round(((ounce * 1.5) / .15), 2)
+elif pour == str('double'):
+    print round(((ounce * 2) / .15), 2)

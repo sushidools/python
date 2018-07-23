@@ -1,0 +1,20 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Jun 18 10:48:49 2018
+
+@author: aleksandradooley
+"""
+#so sorted() is what you use to sort a list in an asceding fashion
+# find the median of a list of numbers
+def median(x):
+    sort = sorted(x)
+    print "Sorted list" + str(sort)
+    halflen = (len(sort) / 2)
+    if len(sort) % 2 == 0:
+        med = (sort[halflen - 1] + sort[halflen]) / 2.0
+    else:
+        med = sort[int(halflen + 0.5)]
+    return med
+
+print median([1,2,3,1,2,3,5,6,3,8,9])

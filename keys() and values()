@@ -1,0 +1,125 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Jun 20 16:23:07 2018
+
+@author: aleksandradooley
+"""
+
+my_dict = {
+  "Breed" : "French Bulldog",
+  "Lifespan" : 12,
+  "Companion" : True
+}
+ 
+print my_dict.keys()
+print my_dict.values()
+
+
+for key in my_dict:
+    print key, my_dict[key]
+    
+# this is a new way to create a list that has a function within
+evens_to_50 = [i for i in range(51) if i % 2 == 0]
+print evens_to_50
+
+even_squares = [ x ** 2 for x in range(1, 11) if x % 2 == 0]
+
+print even_squares
+
+doubles_by_3 = [x * 2 for x in range(1, 6) if (x * 2) % 3 == 0]
+
+print doubles_by_3
+
+cubes_by_four = [x ** 3 for x in range(1, 11) if ((x ** 3) % 4) == 0]
+
+print cubes_by_four
+
+#this is how you slice a list and below is how to set the parameters
+#Where start describes where the slice starts (inclusive), end is where it ends
+# (exclusive), and stride describes the space between items in the sliced list.
+# For example, a stride of 2 would select every other item from the original 
+#list to place in the sliced list
+#[start:end:stride]
+
+l = [i ** 2 for i in range(1, 11)]
+print l[2:9:2]
+
+#you can omit the start and end so that it uses the default indices
+my_list = range(1, 11)
+print my_list[::2]
+
+
+# how to get a list to print backwards
+my_list = range(1, 11)
+
+# Add your code below!
+backwards = my_list[::-1]
+print backwards
+
+
+# print backwards by tens
+to_one_hundred = range(101)
+# Add your code below!
+
+backwards_by_tens = to_one_hundred[::-10]
+
+print backwards_by_tens
+
+# some other edits to lists
+to_21 = range(1, 22)
+print to_21
+#print only the odds
+odds = to_21[::2]
+print odds
+#print the numbers from 8 to 14 inclusively
+middle_third = to_21[7:14:1]
+print middle_third
+
+
+# typing lamba x: x % 3 == 0 is the same as typing
+#def by_three(x):
+#   return x % 3 == 0
+
+my_list = range(16)
+print filter(lambda x: x % 3 == 0, my_list)
+# this only prints the numbers in the range given that can be evenly divided
+#by three including 0
+
+# this lamba is a way to create an 'anonymous function'
+# so this next few lines singles out and prints only what it is told to filter
+languages = ["HTML", "JavaScript", "Python", "Ruby"]
+
+# Add arguments to the filter()
+print filter(lambda x: x == "Python", languages)
+
+# how to print answers within a given range
+squares = [ x ** 2 for x in range(1, 11)]
+print filter(lambda x: x >= 30 and x <= 70, squares)
+
+
+#remember how to print the items in the dictionary
+# this means each key and each value
+movies = {
+  "Monty Python and the Holy Grail": "Great",
+  "Monty Python's Life of Brian": "Good",
+  "Monty Python's Meaning of Life": "Okay"
+}
+print movies.items()
+
+
+# Use a list comprehension to create a list, threes_and_fives, that consists 
+#only of the numbers between 1 and 15 (inclusive) that are evenly divisible by
+# 3 or 5.
+threes_and_fives = [x for x in range(1, 16) if x % 3 == 0 or x % 5 == 0]
+print threes_and_fives
+
+#secret message
+garbled = "!XeXgXaXsXsXeXmX XtXeXrXcXeXsX XeXhXtX XmXaX XI"
+message = garbled[::-2]
+print message
+
+#another secret message
+garbled = "IXXX aXXmX aXXXnXoXXXXXtXhXeXXXXrX sXXXXeXcXXXrXeXt mXXeXsXXXsXaXXXXXXgXeX!XX"
+message = filter(lambda x: x != "X", garbled)
+print message
